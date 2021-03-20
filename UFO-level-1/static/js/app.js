@@ -44,6 +44,23 @@ function runEnter() {
   //   return inputValue.dateTime
   // }
 
+  //---------------------------------------------------------------------------
+  // Function to display the table data
+  //---------------------------------------------------------------------------
+  function displayTableData() {
+    var datetime = document.getElementById("datetime").nodeValue;
+    var city = document.getElementById("city").nodeValue;
+    var state = document.getElementById("state").nodeValue;
+    var country = document.getElementById("country").nodeValue;
+    var shape = document.getElementById("shape").nodeValue;
+    var duration = document.getElementById("durationMinutes").nodeValue;
+    var comments = document.getElementById("comments").nodeValue;
+
+    // Check if user entered data, if empty notify user to enter a date.
+    if (!datetime) {
+        alert ("Please enter a date.");
+        return;
+    }
+  //---------------------------------------------------------------------------
   
 };
- 

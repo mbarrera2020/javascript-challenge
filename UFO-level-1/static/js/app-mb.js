@@ -22,7 +22,7 @@ function displayDetails() {
         return;
     }
 
-    var display = document.getElementById("dsiplay")
+    var display = document.getElementById("display")
 
     // use this for part 2
     // var newRow = display.insertRow

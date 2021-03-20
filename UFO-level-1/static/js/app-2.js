@@ -27,11 +27,11 @@ function runEnter() {
 };
 
   // Use the form input to filter the data by date
-  function bloodType(inputValue){
-    return inputValue.bloodType
+  function dateFilter(inputValue){
+    return inputValue.datetime
   }
 
-  var filteredData = data.filter(data =>data.bloodType ==inputValue);
+  var filteredData = ufoData.filter(ufoData =>ufoData.datetime === inputValue);
 
 
 };
