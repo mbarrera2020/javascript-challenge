@@ -1,7 +1,7 @@
+// java-script challenge -- Level 1: Automatic Table and Date Search 
+
 // Assign the data from `data.js` to a descriptive variable
 var ufoData = data;
-
-// js code here..... reference: student activity JS - day 3 - activity 9
 
 // -------------------------------------------------
 // VARIABLES
@@ -34,17 +34,14 @@ function runEnter()
 
   // Get the value property of the input element
   var inputValue = inputElement.property("value");
+
+  // Display & check input value variable
   console.log(inputValue);
 
   // Get the filtered data
   var filteredData = ufoData.filter(ufoData => ufoData.datetime == inputValue);
 
-  // Display -- variables 
-  // console.log(inputValue);
-  // console.log(ufoData);
-  // console.log(filteredData)
-
-  // Clear display for next selection
+  // Clear the display for the next selection
   tbody.html("");
 
   // Use the form input to filter the data by date
@@ -52,7 +49,8 @@ function runEnter()
   //   return inputValue.dateTime
   // }
 
-console.log(filteredData.length)
+  // Display & check the length to see if there is data
+  console.log(filteredData.length)
 
 filteredData.forEach((rowData) => {
   let row =tbody.append("tr");
@@ -62,7 +60,6 @@ filteredData.forEach((rowData) => {
   })
 })
 }
-
   //---------------------------------------------------------------------------
   // Function: Display the UFO table data
   //---------------------------------------------------------------------------
@@ -82,7 +79,6 @@ filteredData.forEach((rowData) => {
         alert ("Please enter a date.");
         return;
   };
-
   
 };
 
