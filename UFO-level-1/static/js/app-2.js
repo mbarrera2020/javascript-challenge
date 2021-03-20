@@ -13,9 +13,7 @@ var form = d3.select("#form");
 button.on("click", runEnter);
 form.on("submit",runEnter);
 
-// -------------------------------------------------
 // Complete the event handler function for the form
-// -------------------------------------------------
 function runEnter() {
 
   // Prevent the page from refreshing
@@ -25,25 +23,15 @@ function runEnter() {
   var inputElement = d3.select("#datetime");
 
   // Get the value property of the input element
-  var inputValue = inputElement.property("value");
-
-  console.log(inputValue);
-  console.log(ufoData);
-
-  // Get the filtered data
-  var filteredData = ufoData.filter(ufo => ufo.datetime === inputValue);
-
-  // Display -- console.log(filteredData);
-  console.log(filteredData)
-
-
-  // Display -- console.log(filteredData);
+  var inputValue = inputElement.property("value")
+};
 
   // Use the form input to filter the data by date
-  // function dateTime(inputValue){
-  //   return inputValue.dateTime
-  // }
+  function bloodType(inputValue){
+    return inputValue.bloodType
+  }
 
-  
+  var filteredData = data.filter(data =>data.bloodType ==inputValue);
+
+
 };
- 
