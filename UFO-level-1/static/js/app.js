@@ -10,22 +10,22 @@ var ufoData = data;
 var button = d3.select("#filter-btn");
 
 // Select the form
-var form = d3.select("#form");
+var form = d3.select("form");
 
 // Select the table body
-var tbody = d3.select("#tbody");
+var tbody = d3.select("tbody");
 
 // -------------------------------------------------
 // Create event handlers 
 // -------------------------------------------------
-button.on("click", displayUFOData);
-form.on("submit",runEnter);
+button.on("click", runEnter);
+form.on("submit", runEnter);
 
 // -------------------------------------------------
 // Complete the event handler function for the form
 // -------------------------------------------------
-function runEnter() {
-
+function runEnter() 
+{
   // Prevent the page from refreshing
   d3.event.preventDefault();
 
@@ -34,9 +34,10 @@ function runEnter() {
 
   // Get the value property of the input element
   var inputValue = inputElement.property("value");
+  console.log(inputValue);
 
   // Get the filtered data
-  var filteredData = ufoData.filter(ufoData => ufoData.datetime === inputValue);
+  var filteredData = ufoData.filter(ufoData => ufoData.datetime == inputValue);
 
   // Display -- variables 
   // console.log(inputValue);
@@ -51,19 +52,19 @@ function runEnter() {
   //   return inputValue.dateTime
   // }
 
-filteredData.forEach((rowData) => 
-{
+console.log(filteredData.length)
+
+filteredData.forEach((rowData) => {
   let row =tbody.append("tr");
-  Object.values(rowData).forEach((vlaue) => 
-  {
+  Object.values(rowData).forEach((value) =>   {
     let cell = row.append("td");
     cell.text(value);
   })
 })
-
+}
 
   //---------------------------------------------------------------------------
-  // Function: Display the table data
+  // Function: Display the UFO table data
   //---------------------------------------------------------------------------
   function displayUfoData() 
   {
@@ -74,7 +75,9 @@ filteredData.forEach((rowData) =>
           cell.text(value);
         })
     })
-    // Check if user entered a 'Date; if empty notify user to enter a date.
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    // Check if user entered a 'Date'; if empty notify user to enter a date.
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     if (!datetime) {
         alert ("Please enter a date.");
         return;
@@ -83,5 +86,7 @@ filteredData.forEach((rowData) =>
   
 };
 
+//---------------------------------------------------------------------------
+// Display the UFO table data
+//---------------------------------------------------------------------------
 displayUfoData();
-
