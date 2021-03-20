@@ -3,14 +3,22 @@ var ufoData = data;
 
 // js code here..... reference: student activity JS - day 3 - activity 9
 
+// -------------------------------------------------
+// VARIABLES
+// -------------------------------------------------
 // Select the button
 var button = d3.select("#filter-btn");
 
 // Select the form
 var form = d3.select("#form");
 
+// Select the table body
+var tbody = d3.select("#tbody");
+
+// -------------------------------------------------
 // Create event handlers 
-button.on("click", runEnter);
+// -------------------------------------------------
+button.on("click", displayUFOData);
 form.on("submit",runEnter);
 
 // -------------------------------------------------
@@ -27,40 +35,53 @@ function runEnter() {
   // Get the value property of the input element
   var inputValue = inputElement.property("value");
 
-  console.log(inputValue);
-  console.log(ufoData);
-
   // Get the filtered data
-  var filteredData = ufoData.filter(ufo => ufo.datetime === inputValue);
+  var filteredData = ufoData.filter(ufoData => ufoData.datetime === inputValue);
 
-  // Display -- console.log(filteredData);
-  console.log(filteredData)
+  // Display -- variables 
+  // console.log(inputValue);
+  // console.log(ufoData);
+  // console.log(filteredData)
 
-
-  // Display -- console.log(filteredData);
+  // Clear display for next selection
+  tbody.html("");
 
   // Use the form input to filter the data by date
   // function dateTime(inputValue){
   //   return inputValue.dateTime
   // }
 
-  //---------------------------------------------------------------------------
-  // Function to display the table data
-  //---------------------------------------------------------------------------
-  function displayTableData() {
-    var datetime = document.getElementById("datetime").nodeValue;
-    var city = document.getElementById("city").nodeValue;
-    var state = document.getElementById("state").nodeValue;
-    var country = document.getElementById("country").nodeValue;
-    var shape = document.getElementById("shape").nodeValue;
-    var duration = document.getElementById("durationMinutes").nodeValue;
-    var comments = document.getElementById("comments").nodeValue;
+filteredData.forEach((rowData) => 
+{
+  let row =tbody.append("tr");
+  Object.values(rowData).forEach((vlaue) => 
+  {
+    let cell = row.append("td");
+    cell.text(value);
+  })
+})
 
-    // Check if user entered data, if empty notify user to enter a date.
+
+  //---------------------------------------------------------------------------
+  // Function: Display the table data
+  //---------------------------------------------------------------------------
+  function displayUfoData() 
+  {
+    ufoData.forEach((rowData) => {
+      let row = tbody.append("tr");
+        Object.values(rowData).forEach((value) => {
+          let cell = row.append("td");
+          cell.text(value);
+        })
+    })
+    // Check if user entered a 'Date; if empty notify user to enter a date.
     if (!datetime) {
         alert ("Please enter a date.");
         return;
-    }
-  //---------------------------------------------------------------------------
+  };
+
   
 };
+
+displayUfoData();
+
