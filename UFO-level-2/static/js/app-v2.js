@@ -39,10 +39,10 @@ function runEnter()
   
   // Get the value property of the input element
   var inputValue1 = inputElement1.property("value");
-  var inputValue2 = inputElement2.property("value");
-  var inputValue3 = inputElement3.property("value");
-  var inputValue4 = inputElement4.property("value");
-  var inputValue5 = inputElement5.property("value");
+  var inputValue1 = inputElement2.property("value");
+  var inputValue1 = inputElement3.property("value");
+  var inputValue1 = inputElement4.property("value");
+  var inputValue1 = inputElement5.property("value");
 
     // Display & check input value variable
   console.log(inputValue1);
@@ -53,7 +53,7 @@ function runEnter()
         ufoData.state == inputValue3 ||
         ufoData.country == inputValue4 ||
         ufoData.shape == inputValue5 ||
-  );
+        );
 
   // Clear the display for the next selection
   tbody.html("");
@@ -86,13 +86,13 @@ filteredData.forEach((rowData) => {
           cell.text(value);
         })
     })
-    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    // Check if user entered search filters; if empty notify user to enter filters.
-    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    if (!datetime && !city && !state && !country && !shape) {
-        alert ("Please enter search filters.");
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    // Check if user entered a 'Date'; if empty notify user to enter a date.
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    if (!datetime) {
+        alert ("Please enter a date.");
         return;
-    };
+  };
   
 };
 

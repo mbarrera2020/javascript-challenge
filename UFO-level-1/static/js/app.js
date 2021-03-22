@@ -78,7 +78,7 @@ filteredData.forEach((rowData) => {
     if (!datetime) {
         alert ("Please enter a date.");
         return;
-  };
+    };
   
 };
 
