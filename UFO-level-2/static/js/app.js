@@ -44,8 +44,12 @@ function runEnter()
   var inputValue4 = inputElement4.property("value");
   var inputValue5 = inputElement5.property("value");
 
-    // Display & check input value variable
+  // Display & check input value variable
   console.log(inputValue1);
+  console.log(inputValue2);
+  console.log(inputValue3);
+  console.log(inputValue4);
+  console.log(inputValue5);
 
   // Get the filtered data
   var filteredData = ufoData.filter(ufoData => ufoData.datetime == inputValue1 ||
