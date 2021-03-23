@@ -7,7 +7,8 @@ var ufoData = data;
 // VARIABLES
 // -------------------------------------------------
 // Select the button
-var button = d3.select("#filter-btn");
+var button1 = d3.select("#filter-btn");
+var button2 = d3.select("#clear-btn");
 
 // Select the form
 var form = d3.select("form");
@@ -18,8 +19,17 @@ var tbody = d3.select("tbody");
 // -------------------------------------------------
 // Create event handlers 
 // -------------------------------------------------
-button.on("click", runEnter);
+button1.on("click", runEnter);
+button2.on("click", runClear);
 form.on("submit", runEnter);
+
+// -------------------------------------------------
+// Function to clear data 
+// -------------------------------------------------
+function runClear()
+{
+    $("#output").val("");
+}
 
 // -------------------------------------------------
 // Complete the event handler function for the form
