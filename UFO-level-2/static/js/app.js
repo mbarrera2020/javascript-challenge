@@ -51,13 +51,30 @@ function runEnter()
   console.log(inputValue4);
   console.log(inputValue5);
 
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  // Check if user entered search filters; if empty notify user to enter filters.
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  if (!inputValue1 && !inputValue2 && !inputValue3 && !inputValue4 && !inputValue5) {
+    alert ("Please enter search filters.");
+    return;
+  };
+
   // Get the filtered data
-  var filteredData = ufoData.filter(ufoData => ufoData.datetime == inputValue1 ||
-        ufoData.city == inputValue2 ||
-        ufoData.state == inputValue3 ||
-        ufoData.country == inputValue4 ||
-        ufoData.shape == inputValue5 ||
+  // OR selection
+  var filteredData = ufoData.filter(ufoData => (ufoData.datetime == inputValue1) ||
+        (ufoData.city == inputValue2) ||
+        (ufoData.state == inputValue3) ||
+        (ufoData.country == inputValue4) ||
+        (ufoData.shape == inputValue5) 
   );
+
+   // AND selection
+  //  var filteredData = ufoData.filter(ufoData => (ufoData.datetime == inputValue1) &&
+  //  (ufoData.city == inputValue2) &&
+  //  (ufoData.state == inputValue3) &&
+  //  (ufoData.country == inputValue4) &&
+  //  (ufoData.shape == inputValue5) 
+  //   );
 
   // Clear the display for the next selection
   tbody.html("");
@@ -90,14 +107,7 @@ filteredData.forEach((rowData) => {
           cell.text(value);
         })
     })
-    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    // Check if user entered search filters; if empty notify user to enter filters.
-    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    if (!datetime && !city && !state && !country && !shape) {
-        alert ("Please enter search filters.");
-        return;
-    };
-  
+    
 };
 
 //---------------------------------------------------------------------------
