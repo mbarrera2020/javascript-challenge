@@ -52,37 +52,35 @@ function runEnter()
   console.log(inputValue5);
 
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  // Check if user entered search filters; if empty notify user to enter filters.
+  // Check if user entered search filters; if empty, notify user to enter filters.
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   if (!inputValue1 && !inputValue2 && !inputValue3 && !inputValue4 && !inputValue5) {
-    alert ("Please enter search filters.");
+    alert ("Please enter values in search filters.");
     return;
   };
 
-  // Get the filtered data
-  // OR selection
-  var filteredData = ufoData.filter(ufoData => (ufoData.datetime == inputValue1) ||
-        (ufoData.city == inputValue2) ||
-        (ufoData.state == inputValue3) ||
-        (ufoData.country == inputValue4) ||
-        (ufoData.shape == inputValue5) 
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  // Get the filtered data -- using the OR selection
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  var filteredData = ufoData.filter(ufoData => ufoData.datetime == inputValue1 ||
+        ufoData.city == inputValue2 ||
+        ufoData.state == inputValue3 ||
+        ufoData.country == inputValue4 ||
+        ufoData.shape == inputValue5 
   );
-
-   // AND selection
-  //  var filteredData = ufoData.filter(ufoData => (ufoData.datetime == inputValue1) &&
-  //  (ufoData.city == inputValue2) &&
-  //  (ufoData.state == inputValue3) &&
-  //  (ufoData.country == inputValue4) &&
-  //  (ufoData.shape == inputValue5) 
+  
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  // Get the filtered data -- using the AND selection
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //  var filteredData = ufoData.filter(ufoData => ufoData.datetime == inputValue1 &&
+  //       ufoData.city == inputValue2 &&
+  //       ufoData.state == inputValue3 &&
+  //       ufoData.country == inputValue4 &&
+  //       ufoData.shape == inputValue5 
   //   );
 
   // Clear the display for the next selection
   tbody.html("");
-
-  // Use the form input to filter the data by date
-  // function dateTime(inputValue){
-  //   return inputValue.dateTime
-  // }
 
   // Display & check the length to see if there is data
   console.log(filteredData.length)
@@ -95,6 +93,7 @@ filteredData.forEach((rowData) => {
   })
 })
 }
+
   //---------------------------------------------------------------------------
   // Function: Display the UFO table data
   //---------------------------------------------------------------------------
