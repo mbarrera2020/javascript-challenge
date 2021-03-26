@@ -54,10 +54,10 @@ function runEnter()
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   // Check if user entered search filters; if empty, notify user to enter filters.
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  if (!inputValue1 && !inputValue2 && !inputValue3 && !inputValue4 && !inputValue5) {
-    alert ("Please enter values in search filters.");
-    return;
-  };
+  // if (!inputValue1 && !inputValue2 && !inputValue3 && !inputValue4 && !inputValue5) {
+  //   alert ("Please enter values in search filters.");
+  //   return;
+  // };
 
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   // Get the filtered data -- using the OR selection

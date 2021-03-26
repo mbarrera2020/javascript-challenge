@@ -29,6 +29,7 @@ form.on("submit", runEnter);
 function runClear()
 {
     $("#output").val("");
+    tbody.html("");
 }
 
 // -------------------------------------------------

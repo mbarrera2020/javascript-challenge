@@ -38,3 +38,5 @@ city
 state
 country
 shape
+
+Assumption:  Data selection will be done using the "OR" operator.
