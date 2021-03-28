@@ -75,10 +75,10 @@ filteredData.forEach((rowData) => {
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // Check if user entered a 'Date'; if empty notify user to enter a date.
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    if (!datetime) {
-        alert ("Please enter a date.");
-        return;
-    };
+    // if (!datetime) {
+    //     alert ("Please enter a date.");
+    //     return;
+    // };
   
 };
 
